@@ -8,7 +8,8 @@ url = 'https://www.amazon.co.uk/s?k=dslr+camera&i=black-friday&ref=nb_sb_noss'
 
 def getdata(url):
     r = s.get(url)
-    soup = BeautifulSoup(r.text, 'html.parser')
+    r.html.render(sleep=1)
+    soup = BeautifulSoup(r.html.html, 'html.parser')
     return soup
 
 def getnextpage(soup):
